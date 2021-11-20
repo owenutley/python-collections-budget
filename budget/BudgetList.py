@@ -1,5 +1,5 @@
 from . import Expense
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 class BudgetList():
 
@@ -47,7 +47,7 @@ def main():
     for entry in myBudgetList:
         print(entry)
 
-    ax = plt.subplots()
+    fig, ax = plt.subplots()
     labels = ["Expenses", "Overages", "Budget"]
     values = [myBudgetList.sum_expenses, myBudgetList.sum_overages, myBudgetList.budget]
     ax.bar(labels, values, color=['green', 'red', 'blue'])
