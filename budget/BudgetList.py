@@ -25,6 +25,13 @@ class BudgetList():
         self.iter_o = iter(self.overages)
         return self
 
+    def __next__(self):
+        try:
+            return self.iter_e.__next__()
+        except StopIteration:
+            return self.__next__()
+
+
 
 
 def main():
