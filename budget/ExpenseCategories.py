@@ -37,13 +37,15 @@ expenses.read_expenses('data/spending_data.csv')
     globals=globals()
     ))
 
-    fix, ax = plt.subplots()
-    labels = ["Necessary", "Food", "Unnecessary"]
+    fig, ax = plt.subplots()
+    labels = ['Necessary', 'Food', 'Unnecessary']
+
     divided_expenses_sum = []
     for category_exps in divided_set_comp:
-        divided_expenses_sum.append(sum( x.amount for x in category_exps ))
-        
-    ax.pie(divided_expenses_sum, labels = labels, autopct='%1.1f%%')
+        divided_expenses_sum.append( sum(x.amount for x in category_exps) )
+
+    ax.pie(divided_expenses_sum, labels=labels, autopct='%1.1f%%') #, shadow=True, startangle=90)
+
     plt.show()
 
 
